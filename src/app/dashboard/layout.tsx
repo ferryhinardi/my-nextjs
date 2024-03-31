@@ -1,17 +1,15 @@
-import React, { PropsWithChildren } from 'react';
 import { Inter } from 'next/font/google';
-import NavBar from '../components/NavBar';
+
+import type { PropsWithChildren } from 'react';
+import type { Metadata } from 'next';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function DashboardLayout(props: PropsWithChildren<{}>) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>
-        {/* Include shared UI here e.g. a header or sidebar */}
-        <NavBar />
-        {props.children}
-      </body>
-    </html>
-  );
+export const metadata: Metadata = {
+  title: 'Daahboard',
+  description: 'Description of the dashboard page.',
+};
+
+export default function DashboardLayout({ children }: PropsWithChildren<{}>) {
+  return children;
 }
